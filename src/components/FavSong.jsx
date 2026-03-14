@@ -4,7 +4,7 @@ import { useRef, useState } from 'react'
 const SARKI = {
   baslik: 'Bizim Şarkımız',
   sanatci: 'Ferhat Göçer',
-  spotifyId: '0zcA26urhOJ71d4hThKnal', 
+  spotifyId: '0zcA26urhOJ71d4hThKnal',
   neden: 'Bu şarkıyı ilk duyduğumda seni düşündüm. Her satırı sanki bizim için yazılmış gibi hissettirdi.',
 }
 
@@ -12,7 +12,6 @@ export default function FavSong() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
   const [playing, setPlaying] = useState(false)
-  const [showEmbed, setShowEmbed] = useState(false)
 
   return (
     <section id="sarki" ref={ref} style={{ padding: '5rem 2rem', background: 'linear-gradient(160deg, #1A0A10 0%, #2D1520 60%, #3D1A28 100%)', position: 'relative', zIndex: 1, overflow: 'hidden' }}>
@@ -39,13 +38,13 @@ export default function FavSong() {
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, color: 'white', lineHeight: 1.1, marginBottom: '6px' }}>{SARKI.baslik}</h3>
               <p style={{ color: '#C9849A', fontSize: '1rem', marginBottom: '1.5rem' }}>{SARKI.sanatci}</p>
               <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
-                onClick={() => { setPlaying(p => !p); setShowEmbed(true) }}
+                onClick={() => setPlaying(p => !p)}
                 style={{ display: 'flex', alignItems: 'center', gap: '10px', background: playing ? 'rgba(255,77,109,0.2)' : 'linear-gradient(135deg, #FF4D6D, #FF8FA3)', border: playing ? '1px solid rgba(255,77,109,0.4)' : 'none', borderRadius: '999px', padding: '10px 22px', color: 'white', fontSize: '14px', fontWeight: 500, cursor: 'pointer', fontFamily: 'DM Sans, sans-serif' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
                   {playing ? <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/> : <path d="M8 5v14l11-7z"/>}
                 </svg>
-                {playing ? 'Durdur' : "Spotify'da Aç"}
+                {playing ? 'Durdur' : 'Çal'}
               </motion.button>
             </div>
           </div>
@@ -54,11 +53,29 @@ export default function FavSong() {
             <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: 'clamp(1rem, 2vw, 1.1rem)', color: '#FFCCD5', lineHeight: 1.8 }}>"{SARKI.neden}"</p>
           </div>
 
-          {showEmbed && (
-            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} transition={{ duration: 0.5 }} style={{ borderRadius: '12px', overflow: 'hidden' }}>
-              <iframe src={`https://open.spotify.com/embed/track/${SARKI.spotifyId}?utm_source=generator&theme=0`} width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" style={{ display: 'block', borderRadius: '12px' }} />
-            </motion.div>
-          )}
+          {/* Embed — her zaman açık, playing=true olunca autoplay devreye girer */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.6 }}
+            style={{ borderRadius: '16px', overflow: 'hidden' }}
+          >
+            <iframe
+              key={playing}
+              src={`https://open.spotify.com/embed/track/${SARKI.spotifyId}?utm_source=generator&theme=0${playing ? '&autoplay=1' : ''}`}
+              width="100%"
+              height="352"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              style={{ display: 'block', borderRadius: '16px' }}
+            />
+          </motion.div>
+
+          {/* Ses uyarısı */}
+          <p style={{ textAlign: 'center', fontSize: '12px', color: 'rgba(255,204,213,0.4)', marginTop: '-1rem' }}>
+            Sesi Spotify playerından ayarlayabilirsin 🎵
+          </p>
         </motion.div>
       </div>
     </section>
