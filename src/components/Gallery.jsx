@@ -1,16 +1,15 @@
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import { useRef, useState } from 'react'
 
-// ✏️ type: 'photo' ya da 'video' yaz
 const MEDYA = [
-  { type: 'photo', src: '/foto1.png', caption: 'İlk buluşmamız ✨' },
-  { type: 'video', src: '/video1.mp4', caption: 'O anki sesin 🎥' },
-  { type: 'photo', src: '/foto2.png', caption: 'En güzel kahvaltılar' },
-  { type: 'photo', src: '/foto3.png', caption: 'Birlikte yürüdüğümüz yollar' },
-  { type: 'video', src: '/video2.mp4', caption: 'Güldüğün o an 💕' },
-  { type: 'photo', src: '/foto4.png', caption: 'Her gün seninle' },
-  { type: 'photo', src: '/foto5.png', caption: 'Güldüğün anlar 💕' },
-  { type: 'photo', src: '/foto6.png', caption: 'Sonsuza kadar' },
+  { type: 'photo', src: '/foto1.png', caption: 'Recep 💕 Damla' },
+  { type: 'video', src: '/video1.mp4', caption: 'Recep 💕 Damla' },
+  { type: 'photo', src: '/foto2.png', caption: 'Recep 💕 Damla' },
+  { type: 'photo', src: '/foto3.png', caption: 'Recep 💕 Damla' },
+  { type: 'photo', src: '/foto4.png', caption: 'Recep 💕 Damla' },
+  { type: 'photo', src: '/foto5.png', caption: 'Recep 💕 Damla' },
+  { type: 'photo', src: '/foto6.png', caption: 'Recep 💕 Damla' },
+  { type: 'photo', src: '/foto7.png', caption: 'Recep 💕 Damla' },
 ]
 
 const LOOP = [...MEDYA, ...MEDYA, ...MEDYA]
@@ -29,7 +28,6 @@ function VideoThumb({ src }) {
         onMouseEnter={e => e.target.play()}
         onMouseLeave={e => { e.target.pause(); e.target.currentTime = 0 }}
       />
-      {/* Play ikonu */}
       <div style={{
         position: 'absolute', top: '50%', left: '50%',
         transform: 'translate(-50%, -50%)',

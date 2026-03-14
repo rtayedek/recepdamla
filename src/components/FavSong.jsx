@@ -1,11 +1,10 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 
-// ✏️ DEĞİŞTİR
 const SARKI = {
-  baslik: 'Can',
-  sanatci: 'Sezen Aksu',
-  spotifyId: '4cOdK2wGLETKBW3PvgPWqT', // spotify.com/track/BURASI
+  baslik: 'Bizim Şarkımız',
+  sanatci: 'Ferhat Göçer',
+  spotifyId: '0zcA26urhOJ71d4hThKnal', 
   neden: 'Bu şarkıyı ilk duyduğumda seni düşündüm. Her satırı sanki bizim için yazılmış gibi hissettirdi.',
 }
 
