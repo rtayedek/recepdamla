@@ -68,7 +68,7 @@ export default function Hero() {
           boxShadow: '0 2px 16px rgba(255,77,109,0.08)',
         }}
       >
-        14 Şubat • Sevgililer Günü
+        16.03
       </motion.div>
 
       {/* Büyük kalp */}
