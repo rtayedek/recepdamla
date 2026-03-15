@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react'
 const NAV_LINKS = [
   { label: 'Ana Sayfa', href: '#hero' },
   { label: 'Mektup', href: '#mektup' },
-  { label: 'Anılar', href: '#anilar' },
+  { label: 'Sayaç', href: '#anilar' },
   { label: 'Galeri', href: '#galeri' },
   { label: 'Şarkımız', href: '#sarki' },
+  { label: 'Biziz 💕', href: '#istatistik' },
 ]
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [active, setActive] = useState('#hero')

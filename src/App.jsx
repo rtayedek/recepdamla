@@ -5,11 +5,14 @@ import LoveLetter from './components/LoveLetter'
 import Memories from './components/Memories'
 import Gallery from './components/Gallery'
 import FavSong from './components/FavSong'
+import Stats from './components/Stats'
 import Finale from './components/Finale'
+import BackgroundMusic from './components/BackgroundMusic'
 
 export default function App() {
   return (
     <div style={{ position: 'relative', minHeight: '100vh' }}>
+      <BackgroundMusic />
       <Navbar />
       <FloatingHearts />
       <div id="hero"><Hero /></div>
@@ -17,6 +20,7 @@ export default function App() {
       <div id="anilar"><Memories /></div>
       <Gallery />
       <FavSong />
+      <Stats />
       <Finale />
     </div>
   )

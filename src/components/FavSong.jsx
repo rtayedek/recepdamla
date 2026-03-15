@@ -2,11 +2,12 @@ import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 
 const SARKI = {
-  baslik: 'Bizim Şarkımız',
+  baslik: 'Cennet',
   sanatci: 'Ferhat Göçer',
-  spotifyId: '0zcA26urhOJ71d4hThKnal',
+  spotifyId: '1v7vU6nky5xj6LgiuVCuoR',
   neden: 'Bu şarkıyı ilk duyduğumda seni düşündüm. Her satırı sanki bizim için yazılmış gibi hissettirdi.',
 }
+
 
 export default function FavSong() {
   const ref = useRef(null)
@@ -17,7 +18,7 @@ export default function FavSong() {
     <section id="sarki" ref={ref} style={{ padding: '5rem 2rem', background: 'linear-gradient(160deg, #1A0A10 0%, #2D1520 60%, #3D1A28 100%)', position: 'relative', zIndex: 1, overflow: 'hidden' }}>
       <div style={{ maxWidth: '860px', margin: '0 auto', position: 'relative', zIndex: 2 }}>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <p style={{ fontSize: '12px', color: '#C9849A', letterSpacing: '0.12em', fontWeight: 500, marginBottom: '8px' }}>HER ZAMAN</p>
+          <p style={{ fontSize: '12px', color: '#C9849A', letterSpacing: '0.12em', fontWeight: 500, marginBottom: '8px' }}></p>
           <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 700, color: 'white' }}>Fav Şarkımız</h2>
         </motion.div>
 

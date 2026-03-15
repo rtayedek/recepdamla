@@ -98,7 +98,7 @@ export default function Finale() {
             lineHeight: 1.7,
           }}
         >
-          Her Sevgililer Günü, seninle daha da güzel. 💕
+          💕
         </motion.p>
       </div>
     </section>

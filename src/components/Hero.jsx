@@ -31,10 +31,10 @@ function PulsingHeart() {
 }
 
 // ✏️ BURAYA SEVGİLİNİN ADINI YAZ
-const SEVGILIM_ADI = "Canım"
+const SEVGILIM_ADI = "İyiki Doğdun Canım DAMLAM"
 
 // ✏️ BURAYA ÖZEL MESAJINI YAZ
-const HERO_MESAJ = "Seninle her an özel, her nefes daha güzel."
+const HERO_MESAJ = "İkimizin özel sitesine hoş geldin prensesim 🌸"
 
 export default function Hero() {
   return (
