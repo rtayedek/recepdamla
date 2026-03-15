@@ -142,7 +142,9 @@ export default function Stats() {
             transition={{ type: 'spring', bounce: 0.5 }}
             style={{
               position: 'fixed', top: '50%', left: '50%',
-              transform: 'translate(-50%, -50%)',
+transform: 'translate(-50%, -50%)',
+marginLeft: 0,
+marginRight: 0,
               zIndex: 9999, textAlign: 'center',
               background: 'rgba(255,251,255,0.98)',
               border: '2px solid #FFCCD5',
