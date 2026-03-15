@@ -133,49 +133,59 @@ export default function Stats() {
         <Konfeti key={k.id} id={k.id} onDone={() => kaldir(k.id)} />
       ))}
 
-      <AnimatePresence>
-        {showMsg && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5, y: 50 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: -20 }}
-            transition={{ type: 'spring', bounce: 0.5 }}
-            style={{
-              position: 'fixed', top: '50%', left: '50%',
-transform: 'translate(-50%, -50%)',
-marginLeft: 0,
-marginRight: 0,
-              zIndex: 9999, textAlign: 'center',
-              background: 'rgba(255,251,255,0.98)',
-              border: '2px solid #FFCCD5',
-              borderRadius: '32px',
-              padding: '4rem 5rem',
-              boxShadow: '0 30px 80px rgba(255,77,109,0.3)',
-              pointerEvents: 'none',
-              width: 'min(90vw, 600px)',
-            }}
-          >
-            <motion.div
-              animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              style={{ fontSize: '8rem', marginBottom: '1.5rem' }}
-            >
-              🎂
-            </motion.div>
-            <h2 style={{
-              fontFamily: 'Playfair Display, serif',
-              fontSize: 'clamp(2.2rem, 6vw, 3.5rem)',
-              fontWeight: 700, color: '#FF4D6D',
-              marginBottom: '1rem',
-            }}>
-              İyi ki doğdun! 🎉
-            </h2>
-            <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', color: '#6B3040', fontSize: '1.3rem' }}>
-              Seni seviyorum canım 💕
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+     <AnimatePresence>
+  {showMsg && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      style={{
+        position: 'fixed', inset: 0,
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1rem',
+        pointerEvents: 'none',
+      }}
+    >
+      <motion.div
+        initial={{ scale: 0.5, y: 50 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.8, y: -20 }}
+        transition={{ type: 'spring', bounce: 0.5 }}
+        style={{
+          textAlign: 'center',
+          background: 'rgba(255,251,255,0.98)',
+          border: '2px solid #FFCCD5',
+          borderRadius: '32px',
+          padding: '3rem 2.5rem',
+          boxShadow: '0 30px 80px rgba(255,77,109,0.3)',
+          width: 'min(88vw, 500px)',
+        }}
+      >
+        <motion.div
+          animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{ fontSize: '6rem', marginBottom: '1.5rem' }}
+        >
+          🎂
+        </motion.div>
+        <h2 style={{
+          fontFamily: 'Playfair Display, serif',
+          fontSize: 'clamp(2rem, 6vw, 3rem)',
+          fontWeight: 700, color: '#FF4D6D',
+          marginBottom: '1rem',
+        }}>
+          İyi ki doğdun! 🎉
+        </h2>
+        <p style={{ fontFamily: 'Playfair Display, serif', fontStyle: 'italic', color: '#6B3040', fontSize: '1.2rem' }}>
+          Seni seviyorum canım 💕
+        </p>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
       <section id="istatistik" ref={ref} style={{
         padding: '5rem 2rem',
